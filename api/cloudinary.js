@@ -6,6 +6,7 @@ cloudinary.config({
   api_secret: process.env.CLOUDINARY_SECRET
 });
 
+//get all resources from the cloudinary account
 const getAllResources = async (next_cursor, actual = []) => {
   const result = await cloudinary.v2.api.resources({
     max_results: 500,//max ammount of resources requested at once
