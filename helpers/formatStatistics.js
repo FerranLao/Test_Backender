@@ -1,7 +1,6 @@
 // * format statistics from an array of cloudinary items
 module.exports = data => {
   let totalData = 0;
-  console.log(data)
   const formats = data.reduce((acc, value) => {
     totalData += value.bytes;
     acc[value.format] ? acc[value.format]++ : (acc[value.format] = 1);
