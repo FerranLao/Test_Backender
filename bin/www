@@ -81,5 +81,5 @@ function onError(error) {
  */
 
 function onListening() {
-  console.log(`Server Listening in port ${process.env.PORT}`)
+  console.log(`Server Listening in port ${process.env.PORT||"3000"}`)
 }

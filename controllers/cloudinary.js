@@ -9,7 +9,8 @@ module.exports = {
       const stadistics = formatStatistics(resources);
       res.json(stadistics);
     } catch (e) {
-      res.status(e.statusCode || 500).send(e.message);
+      console.log(e)
+      res.status(e.statusCode || 500).send(e.message||"something happened");
     }
   },
 
@@ -25,7 +26,7 @@ module.exports = {
       //Getting a readable stream from csv-stringify and passing it to res object.
       csv(resources, { header: true }).pipe(res);
     } catch (e) {
-      res.status(e.statusCode || 500).send(e.message);
+      res.status(e.statusCode || 500).send(e.message||"something happened");
     }
   }
 };
